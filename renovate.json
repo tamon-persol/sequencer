@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "timezone": "Asia/Tokyo",
+  "labels": ["renovate"],
+  "vulnerabilityAlerts": {
+    "labels": ["security"]
+  },
+  "packageRules": [
+    {
+      "updateTypes": ["major"],
+      "labels": ["renovate", "update-major"]
+    },
+    {
+      "updateTypes": ["minor", "patch"],
+      "labels": ["renovate", "update-minor"],
+      "groupName": "non-major-updates",
+      "schedule": ["after 10am and before 11am on monday"]
+    }
+  ]
+}

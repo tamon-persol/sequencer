@@ -1,0 +1,24 @@
+# NOTE: default を必ず設定する必要があるが
+# 今のところそれに相当するものはないので、
+# frontend を default として運用する。
+#
+# サラリーリサーチでは LP を default としているので、
+# それに寄せてもいいかも知れない。
+runtime: nodejs12
+
+handlers:
+  - url: /_nuxt
+    static_dir: .nuxt/dist/client
+    secure: always
+
+  - url: /(.*\.(gif|png|jpg|ico|txt))$
+    static_files: static/\1
+    upload: static/.*\.(gif|png|jpg|ico|txt)$
+    secure: always
+
+  - url: /.*
+    script: auto
+    secure: always
+
+env_variables:
+  NODE_ENV: development
