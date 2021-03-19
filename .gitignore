@@ -6,4 +6,4 @@
 .idea
 *.iml
 node_modules/
-.nuxt
+.nuxt/
